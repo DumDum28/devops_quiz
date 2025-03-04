@@ -1,0 +1,70 @@
+PS C:\devops_quiz-main> terraform apply -auto-approve
+null_resource.execute_scripts: Refreshing state... [id=526149906374095308]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:  
+  + create
+
+Terraform will perform the following actions:
+
+  # docker_container.my_container will be created
+  + resource "docker_container" "my_container" {
+      + attach                                      = false
+      + bridge                                      = (known after apply)
+      + command                                     = (known after apply)
+      + container_logs                              = (known after apply)
+      + container_read_refresh_timeout_milliseconds = 15000
+      + entrypoint                                  = (known after apply)
+      + env                                         = (known after apply)
+      + exit_code                                   = (known after apply)
+      + hostname                                    = (known after apply)
+      + id                                          = (known after apply)
+      + image                                       = "devops-quiz-main:latest"
+      + init                                        = (known after apply)
+      + ipc_mode                                    = (known after apply)
+      + log_driver                                  = (known after apply)
+      + logs                                        = false
+      + must_run                                    = true
+      + name                                        = "devops-quiz-main"
+      + network_data                                = (known after apply)
+      + read_only                                   = false
+      + remove_volumes                              = true
+      + restart                                     = "no"
+      + rm                                          = false
+      + runtime                                     = (known after apply)
+      + security_opts                               = (known after apply)
+      + shm_size                                    = (known after apply)
+      + start                                       = true
+      + stdin_open                                  = false
+      + stop_signal                                 = (known after apply)
+      + stop_timeout                                = (known after apply)
+      + tty                                         = false
+      + wait                                        = false
+      + wait_timeout                                = 60
+
+      + healthcheck (known after apply)
+
+      + labels (known after apply)
+
+      + ports {
+          + external = 3000
+          + internal = 3000
+          + ip       = "0.0.0.0"
+          + protocol = "tcp"
+        }
+    }
+
+  # docker_image.my_app will be created
+  + resource "docker_image" "my_app" {
+      + id          = (known after apply)
+      + image_id    = (known after apply)
+      + name        = "devops-quiz-main:latest"
+      + repo_digest = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+docker_image.my_app: Creating...
+docker_image.my_app: Creation complete after 0s [id=sha256:a5aae9db731e289d12fcbd5b9608e1cae14b49855c7c8e079da25d6c582497f4devops-quiz-main:latest]
+docker_container.my_container: Creating...
+docker_container.my_container: Creation complete after 1s [id=3d035e49d3051f81d363fbe6946d6bf4984a705b0e4468bda8e6f8970b430ea1]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
